@@ -7,7 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>mobileplan</title>
-
+   
+   <style>
+.nav {
+background-color:cadetblue;
+list-style-type: none;
+text-align: center;
+margin: 0;
+padding: 0;
+height: 180px;
+  width: 40%;
+}
+body{background-image: url('image2.jfif');
+  background-size: 600px 550px}
+  img {
+  border-radius: 50%;
+}
+</style>
     <!-- This is a very crude way of doing things meant for learning and training only -->
 	<script type="text/javascript">
 		function InsertRecord()  
@@ -44,22 +60,29 @@
 	
 </head>
 <body style="height: 431px">  
-    
-     Add Mobileplan Data : 
-     <p style="font-size: medium;">  
+ 
+ 
+    <h1 align ="center" style="font-family:verdana;color:white;" >Insert Mobileplan Data </h1><br><br><br>
+      <center>
+      <ul class="nav">
+     <p style="font-size: 20px;">  
      		Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
      		<input id="id" type="text" /></p>  
-        <p style="font-size: medium;">  
+        <p style="font-size: 20px;">  
             Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              
             <input id="name" type="text" /></p>  
-        <p style="font-size: medium;">  
+        <p style="font-size: 20px;">  
             Description &nbsp;            
             <input id="description" type="text" /></p>  
-        <p style="font-size: medium;">  
+        <p style="font-size: 20px;">  
             Validity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                
-            <input id="validity" type="text" /></p>  
+            <input id="validity" type="text" /></p> </ul>
             
-    <input id="printRecord" type="button" value="Insert" onclick="InsertRecord()"  />   
+   <br> <input id="printRecord"  type="button" value="Insert"  onclick="InsertRecord()"  />  
+   <a href='http://localhost:8080/Final.html'><input type="button"  value="Home Page" /></a> </br>
+    </center> 
+    <img src="mobileimage.png" alt="Avatar" width="180e" height="180" align="right">
+  
     </body>  
 
 </html
