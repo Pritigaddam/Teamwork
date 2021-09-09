@@ -1,0 +1,65 @@
+<!-- This is a very crude way of doing things meant for learning and training only -->
+<!DOCTYPE html>
+<html lang="en_IN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mobileplan</title>
+
+    <!-- This is a very crude way of doing things meant for learning and training only -->
+	<script type="text/javascript">
+		function InsertRecord()  
+        {  
+            var id = document.getElementById('id').value;  
+            var name = document.getElementById('name').value;  
+            var description = document.getElementById('description').value;  
+            var validity = document.getElementById('validity').value; 
+            
+            if (id.length != 0 && name.length !=0 && description.length !=0 && validity.length !=0)  
+            {  
+               
+                
+                var xhr = new XMLHttpRequest();
+			    xhr.open("POST", "http://localhost:8080/mp", false);
+			    xhr.setRequestHeader("Accept", "application/json");
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.onreadystatechange = function () {
+   				if (xhr.readyState === 4) {
+      		    console.log(xhr.status);
+      			console.log(xhr.responseText);
+   				}};
+                var obj = {"id": id ,"name": name ,"description":description ,"validity": validity};
+				var myjson = JSON.stringify(obj);
+				xhr.send(myjson);
+				alert("Mobileplan added Successfully");	  
+            }  
+            else  
+            {              
+                alert("Please Enter all the Fields ");  
+            }  
+        }  
+	</script>
+	
+</head>
+<body style="height: 431px">  
+    
+     Insert Mobileplan Data : 
+     <p style="font-size: medium;">  
+     		Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+     		<input id="id" type="text" /></p>  
+        <p style="font-size: medium;">  
+            Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              
+            <input id="name" type="text" /></p>  
+        <p style="font-size: medium;">  
+            Description &nbsp;            
+            <input id="description" type="text" /></p>  
+        <p style="font-size: medium;">  
+            Validity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                
+            <input id="validity" type="text" /></p>  
+            
+    <input id="printRecord" type="button" value="Insert" onclick="InsertRecord()"  />   
+    </body>  
+
+</html

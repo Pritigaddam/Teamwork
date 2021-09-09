@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en_IN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>mobileplan</title>
+
+    <!-- This is a very crude way of doing things meant for learning and training only -->
+	<script type="text/javascript">
+		function getmobileplanlist() {
+			var idn =document.getElementById('id').value;  
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://localhost:8080/mp", false);
+			xhr.send();
+			var mpList = xhr.response;
+			var mobilePlans = JSON.parse(mpList)
+			
+			var mobilePlanList = document.getElementById("mobileplans");
+             for (var i = 0; i < mobilePlans.length; i++) 
+             {
+                    if( mobilePlans[i].id==idn)
+                        {
+                        mobilePlanList.innerHTML += '<li>' + mobilePlans[i].id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].validity + '</li>';
+						}
+					
+                }
+			
+		
+		}
+	</script>
+</head>
+<body>
+	The mobile plans in the db are: <br>
+	
+  <table>  
+      <tr><td>ID:</td><td><input type="text" id="id"/></td></tr> 
+      <tr><td colspan="2"><input type="button" value="Get By Id" onclick="getmobileplanlist()""/></td></tr>  
+   </table>
+	<ul id="mobileplans">
+	</ul>
+
+
+</body>
+
+</html>

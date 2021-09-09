@@ -1,0 +1,64 @@
+
+<!-- This is a very crude way of doing things meant for learning and training only -->
+<!DOCTYPE html>
+<html lang="en_IN">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mobileplan</title>
+ 
+    <!-- This is a very crude way of doing things meant for learning and training only -->
+    <script type="text/javascript">
+        function DeleteRecord()  
+        {  
+            var id = document.getElementById('id').value;  
+
+ 
+
+            if (id.length != 0 )  
+            {  
+
+ 
+
+
+                var xhr = new XMLHttpRequest();
+                var url = "http://localhost:8080/mp/"+id;
+                xhr.open("DELETE", url, false);
+                xhr.send();
+                alert("Mobileplan deleted Successfully");
+ 
+            }  
+            else  
+            {              
+                alert("Enter ID");  
+            }  
+        }  
+    </script>
+
+ 
+
+</head>
+<body style="height: 431px">  
+
+ 
+
+     Delete Mobileplan Data : 
+     <p style="font-size: medium;">  
+             Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+             <input id="id" type="text" /></p>  
+
+ 
+
+
+    <input id="printRecord" type="button" value="Delete" onclick="DeleteRecord()"  />   
+    </body>  
+ 
+</html>
+
+
+
+
+
+
