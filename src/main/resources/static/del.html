@@ -2,12 +2,27 @@
 <!-- This is a very crude way of doing things meant for learning and training only -->
 <!DOCTYPE html>
 <html lang="en_IN">
- 
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>mobileplan</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .text-align-center{
+	text-align:center;
+	 border: 1px solid black;
+  border-collapse: collapse;
+    
+}
+  body{background-image: url('16.png');
+  background-size: 600px 550px}
+ 
+  .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
  
     <!-- This is a very crude way of doing things meant for learning and training only -->
     <script type="text/javascript">
@@ -44,15 +59,22 @@
 
  
 
-     Delete Mobileplan Data : 
-     <p style="font-size: medium;">  
-             Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+     <h1 align ="center" style="font-family:verdana;color:black;" > Delete Mobileplan Data </h1><br><br><br>
+      <center>
+      <ul class="nav">
+     <p style="font-size: 20px;"> 
+
+            Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
              <input id="id" type="text" /></p>  
 
  
 
 
     <input id="printRecord" type="button" value="Delete" onclick="DeleteRecord()"  />   
+   <a href='http://localhost:8080/Final.html'><input type="button"  value="Home Page" /></a> </br>
+   
+    <img src="delete.png" alt="Avatar" width="180e" height="180" align="center" >
+     </center> 
     </body>  
  
 </html>
