@@ -47,17 +47,22 @@
 		}
 	</script>
 </head>
-<body>
-	The mobile plans in the db are: <br>
-	
-  <table>  
-      <tr><td>ID:</td><td><input type="text" id="id"/></td></tr> 
-      <tr><td colspan="2"><input type="button" value="Get By Id" onclick="getmobileplanlist()""/></td></tr>  
-   </table>
-	<ul id="mobileplans">
-	</ul>
+<body style="height: 431px">  
 
+ <br>
 
-</body>
+     <h1 align ="center" style="font-family:verdana;color:black;" > Search Mobileplan Data </h1><br><br><br>
+      <center>
+      <ul class="nav">
+     <p style="font-size: 20px;"> 
 
+            Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="id" type="text" /></p>
+
+  <input id="printRecord" type="button" value="Search" onclick="getmobileplanlist()"  />   
+   <a href='http://localhost:8080/Final.html'><input type="button"  value="Home Page" /></a> </br><br>
+   
+    <img src="search.png" alt="Avatar" width="120" height="120" align="center" >
+     </center> 
+    </body>  
+ 
 </html>
