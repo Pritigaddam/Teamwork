@@ -202,55 +202,58 @@ button {
 }
 
 </style>
-<script type="text/javascript">
+
+
+    <!-- This is a very crude way of doing things meant for learning and training only -->
+	<script type="text/javascript">
 		function getmobileplanlist() {
+			var idn =document.getElementById('id').value;  
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", "http://localhost:8080/mp", false);
 			xhr.send();
 			var mpList = xhr.response;
-			
-			//alert(mpList);
 			var mobilePlans = JSON.parse(mpList)
 			
-			
 			var mobilePlanList = document.getElementById("mobileplans");
+             for (var i = 0; i < mobilePlans.length; i++) 
+             {
+                    if( mobilePlans[i].id==idn)
+                        {
+                        mobilePlanList.innerHTML += '<li>' + mobilePlans[i].id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].validity + '</li>';
+ 
+
+                        }
+                }
 			
-			
-			
-         for (var i = 0; i < mobilePlans.length; i++) {
-                mobilePlanList.innerHTML += '<tr>' +'<td class="text-align-center">'+ mobilePlans[i].id+'</td>'+'<td class="text-align-center">'+mobilePlans[i].name+'</td>' + '<td class="text-align-center">' + mobilePlans[i].description + '</td>'  + '<td class="text-align-center">' + mobilePlans[i].validity + '</td>' +'<td class="text-align-center">'+ "<a href='http://localhost:8080/update.html'>Edit</a>"+'</td>' + '<td class="text-align-center">'+ "<a href='http://localhost:8080/del.html'> Delete</a>"+'</td>' +'</tr>';
-            }
-            
+		
 		}
 	</script>
-	</head>
-	
-
+</head>
 <body style="background-color: #E6E6FA" onLoad="getmobileplanlist()">
 <mypage style="text-align:center; font-family:Algerian; font-size:300% ;"><b>MOBILE PLAN DATA</b></mypage>
 
 <div class="topnav">
-  <a  href="Main.html"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a  class="active" href="Main.html"><i class="fa fa-fw fa-home"></i>Home</a>
   <a  href="add_data.html">Add Data</a>
   <a  href="Final.html">View Data</a>
-  <a class="active" href="search.html">Search Data</a>
+  <a href="search.html">Search Data</a>
   </div>
   <main id="main">
-	<mypage style="text-align:center; font-family:Arial; font-size:250% ; border-bottom: 3px solid #800080;">List of Mobile Plan Data</mypage>
+	<mypage style="text-align:center; font-family:Arial; font-size:250% ; border-bottom: 3px solid #800080;">Search Mobile Plan Data</mypage>
      <br/>
      <br/>
      <Center>
-	<table class= "center" border="2" width="70%" cellpadding="2" id="mobileplans";>
-	<tr>
-	<th>Id</th>
-	<th>Name</br></th>
-	<th>Discription</br></th>
-	<th>Validity</th>
-	<th>Edit</th>
-	<th>Delete</th>
-	</tr>
-	</table>
-     </Center>
-</body>
+  <table>  
+      <tr><td>ID:</td><td><input type="text" id="id"/></td></tr>  
+  </table> 
+   <br>
+  <button type="submit" class="btn" onclick="getmobileplanlist()"> Search </button>
+   
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://localhost:8080/search.html'><button type="button" class="cancelbtn">Cancel</button></a><br>
+   </Center>
+   <ul id="mobileplans">
+	</ul>
+    </main>
+   </body>  
 
-</html>
+</html
