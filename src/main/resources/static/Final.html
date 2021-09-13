@@ -203,6 +203,8 @@ button {
 
 </style>
 <script type="text/javascript">
+
+
 		function getmobileplanlist() {
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", "http://localhost:8080/mp", false);
@@ -218,7 +220,15 @@ button {
 			
 			
          for (var i = 0; i < mobilePlans.length; i++) {
-                mobilePlanList.innerHTML += '<tr>' +'<td class="text-align-center">'+ mobilePlans[i].id+'</td>'+'<td class="text-align-center">'+mobilePlans[i].name+'</td>' + '<td class="text-align-center">' + mobilePlans[i].description + '</td>'  + '<td class="text-align-center">' + mobilePlans[i].validity + '</td>' +'<td class="text-align-center">'+ "<a href='http://localhost:8080/update.html'>Edit</a>"+'</td>' + '<td class="text-align-center">'+ "<a href='http://localhost:8080/del.html'> Delete</a>"+'</td>' +'</tr>';
+			mobilePlanList.innerHTML += '<tr>' +'<td class="text-align-center">'+ mobilePlans[i].id+
+                '</td>'+'<td class="text-align-center">'+mobilePlans[i].name+'</td>' +
+                 '<td class="text-align-center">' + mobilePlans[i].description + '</td>'  +
+                  '<td class="text-align-center">' + mobilePlans[i].validity + '</td>' +
+                  '<td class="text-align-center">'+
+                   "<form ><a href='http://localhost:8080/update.html?id="+mobilePlans[i].id+"&name="+mobilePlans[i].name+"&description="+mobilePlans[i].description+"&validity="+mobilePlans[i].validity+"'><input value ='Edit' id = "+mobilePlans[i].id+" type='button' /></form>"+
+                  '</td>' + '<td class="text-align-center">'+ 
+                  "<form ><a href='http://localhost:8080/del.html?id="+mobilePlans[i].id+"'><input value ='Delete' id = del"+mobilePlans[i].id+" type='button' /></form>"+
+                  '</td>' +'</tr>';
             }
             
 		}

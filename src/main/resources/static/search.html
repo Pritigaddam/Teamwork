@@ -213,23 +213,25 @@ button {
 			xhr.send();
 			var mpList = xhr.response;
 			var mobilePlans = JSON.parse(mpList)
-			
+			var flag = 0;
 			var mobilePlanList = document.getElementById("mobileplans");
              for (var i = 0; i < mobilePlans.length; i++) 
              {
                     if( mobilePlans[i].id==idn)
-                        {
+                    {
                         mobilePlanList.innerHTML += '<li>' + mobilePlans[i].id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].validity + '</li>';
- 
-
-                        }
-                }
-			
+ 						flag = 1;
+                    }
+              }
+			  if (flag == 0)
+			  {
+					alert("Invalid Id");
+			}
 		
 		}
 	</script>
 </head>
-<body style="background-color: #E6E6FA" onLoad="getmobileplanlist()">
+<body style="background-color: #E6E6FA" >
 <mypage style="text-align:center; font-family:Algerian; font-size:300% ;"><b>MOBILE PLAN DATA</b></mypage>
 
 <div class="topnav">

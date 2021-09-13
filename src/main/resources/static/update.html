@@ -206,6 +206,21 @@ button {
 
     <!-- This is a very crude way of doing things meant for learning and training only -->
 	<script type="text/javascript">
+		
+		function setValue()
+		{
+			var url_string = window.location;
+			var url = new URL(url_string);
+			var tvid = url.searchParams.get("id");
+			var name = url.searchParams.get("name");
+			var validity = url.searchParams.get("validity");
+			var description = url.searchParams.get("description");
+			document.getElementById('id').value = tvid;
+			document.getElementById('name').value = name;
+			document.getElementById('description').value = description;
+			document.getElementById('validity').value = validity;
+			
+		}
 		function UpdateRecord()  
         {  
             var id = document.getElementById('id').value;  
@@ -239,7 +254,7 @@ button {
 	</script>
 	
 </head>
-<body style="background-color: #E6E6FA">
+<body onload = "setValue()" style="background-color: #E6E6FA">
 <mypage style="text-align:center; font-family:Algerian; font-size:300% ;"><b>MOBILE PLAN DATA</b></mypage>
 
 <div class="topnav">
