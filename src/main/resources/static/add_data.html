@@ -226,13 +226,21 @@ button {
                 var obj = {"id": id ,"name": name ,"description":description ,"validity": validity};
 				var myjson = JSON.stringify(obj);
 				xhr.send(myjson);
-				alert("Mobileplan added Successfully");	  
-            }  
-            else  
-            {              
-                alert("Please Enter all the Fields ");  
-            }  
-        }  
+				
+				if(xhr.status!=406)
+				{
+				alert("Mobile Plan Added Successfully");
+				}
+				else{
+					alert("Plan Already Exists");
+				}
+			}		
+			else
+			{
+				alert("Enter all fields");
+			}
+        }
+        
 	</script>
 </head>
 
