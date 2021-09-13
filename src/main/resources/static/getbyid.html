@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en_IN">
 
@@ -5,7 +7,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- <style>
+	
+	  <style>
   .text-align-center{
 	text-align:center;
 	 border: 1px solid black;
@@ -21,6 +24,7 @@
 }
 
 </style>
+
 	<title>mobileplan</title>
 
     <!-- This is a very crude way of doing things meant for learning and training only -->
@@ -39,30 +43,28 @@
                     if( mobilePlans[i].id==idn)
                         {
                         mobilePlanList.innerHTML += '<li>' + mobilePlans[i].id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].validity + '</li>';
-						}
-					
+ 
+
+                        }
                 }
 			
 		
 		}
 	</script>
 </head>
-<body style="height: 431px">  
+<body>
+	<h1 align ="center" style="font-family:verdana;color:black;" >Search Mobileplan Data </h1><br><br>
+    <Center>
+  <table>  
+      <tr><td>ID:</td><td><input type="text" id="id"/></td></tr> <br><br>   
+   </table><br>
+  <input type="button" value="Search" onclick="getmobileplanlist()""/>&nbsp;&nbsp;
+     <a href='http://localhost:8080/Final.html'><input type="button"  value="Home Page" /></a>
+	<h3 id="mobileplans">
+	</h3>
+	<img src="search.png" alt="Avatar" width="120" height="120" align="center">
 
- <br>
+    </Center>
+</body>
 
-     <h1 align ="center" style="font-family:verdana;color:black;" > Search Mobileplan Data </h1><br><br><br>
-      <center>
-      <ul class="nav">
-     <p style="font-size: 20px;"> 
-
-            Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="id" type="text" /></p>
-
-  <input id="printRecord" type="button" value="Search" onclick="getmobileplanlist()"  />   
-   <a href='http://localhost:8080/Final.html'><input type="button"  value="Home Page" /></a> </br><br>
-   
-    <img src="search.png" alt="Avatar" width="120" height="120" align="center" >
-     </center> 
-    </body>  
- 
 </html>
