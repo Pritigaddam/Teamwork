@@ -15,10 +15,13 @@ import com.hansen.mobileplan.dao.MobilePlanDao;
 import com.hansen.mobileplan.model.MobilePlan;
 import com.hansen.mobileplan.srvc.MobilePlanSrvc;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 @RestController
 @RequestMapping("/mp")
 public class MobilePlanController {
-	
+	private Log logger = LogFactory.getLog(MobilePlanController.class);
 	@Autowired
 	MobilePlanSrvc mpSrvc;
 	
@@ -27,6 +30,7 @@ public class MobilePlanController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> create(@RequestBody MobilePlan inputentity) {
+		logger.info("Inside add method");
 	ResponseEntity<Object> mpResponse;
 
 	Object mobilePlan = mpSrvc.create(inputentity);
@@ -45,6 +49,7 @@ public class MobilePlanController {
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> read(@PathVariable(value = "id") Long id) {
+		logger.info("Inside getbyid method");
 		ResponseEntity<Object> mpResponse;
 		
 		Object mobilePlan = mpSrvc.read(id);
@@ -64,6 +69,7 @@ public class MobilePlanController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<MobilePlan>> readAll() {
+		logger.info("Inside readAll method");
 		ResponseEntity<Iterable<MobilePlan>> mpResponse;
 		
 		Iterable<MobilePlan> mobilePlanList = mpSrvc.readAll();
@@ -76,6 +82,7 @@ public class MobilePlanController {
 	
 	@RequestMapping(method = RequestMethod.PATCH) //OR PUT
 	public ResponseEntity<Object> update(@RequestBody MobilePlan tobemerged) {
+		logger.info("Inside update method");
 	ResponseEntity<Object> planResponse;
 	Object mobilePlanList = mpSrvc.update(tobemerged);
 	String m="ID : "+tobemerged.getId()+" Not Found";
@@ -96,6 +103,7 @@ public class MobilePlanController {
 	@RequestMapping(value= "{planid}",method = RequestMethod.DELETE)
 	public ResponseEntity<Object> delete(@PathVariable(value = "planid") Long planid) 
 	{
+		logger.info("Inside delete method");
 		 ResponseEntity<Object> bookResponse;
 		 Boolean person=mpSrvc.delete(planid);
 		 String m="ID: "+planid+" deleted successfully";
