@@ -1,14 +1,15 @@
 package com.hansen.mobileplan.ctrlr;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hansen.mobileplan.dao.MobilePlanDao;
@@ -31,6 +32,7 @@ public class MobilePlanController {
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> create(@RequestBody MobilePlan inputentity) {
 		logger.info("Inside add method");
+		logger.warn("Inside add method");
 	ResponseEntity<Object> mpResponse;
 
 	Object mobilePlan = mpSrvc.create(inputentity);
@@ -49,7 +51,7 @@ public class MobilePlanController {
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> read(@PathVariable(value = "id") Long id) {
-		logger.info("Inside getbyid method");
+		logger.info("Inside search method");
 		ResponseEntity<Object> mpResponse;
 		
 		Object mobilePlan = mpSrvc.read(id);
@@ -70,6 +72,12 @@ public class MobilePlanController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<MobilePlan>> readAll() {
 		logger.info("Inside readAll method");
+		logger.warn("Inside readAll method");
+		logger.debug("Inside readAll method");
+		logger.trace("Inside readAll method");
+		logger.fatal("Inside readAll method");
+		logger.error("Inside readAll method");
+		
 		ResponseEntity<Iterable<MobilePlan>> mpResponse;
 		
 		Iterable<MobilePlan> mobilePlanList = mpSrvc.readAll();
