@@ -205,12 +205,12 @@ button {
 <script type="text/javascript">
 		function InsertRecord()  
         {  
-            var id = document.getElementById('id').value;  
+            //var id = document.getElementById('id').value;  
             var name = document.getElementById('name').value;  
             var description = document.getElementById('description').value;  
             var validity = document.getElementById('validity').value; 
             
-            if (id.length != 0 && name.length !=0 && description.length !=0 && validity.length !=0)  
+            if (name.length !=0 && description.length !=0 && validity.length !=0)  
             {  
                
                 
@@ -223,7 +223,7 @@ button {
       		    console.log(xhr.status);
       			console.log(xhr.responseText);
    				}};
-                var obj = {"id": id ,"name": name ,"description":description ,"validity": validity};
+                var obj = {"name": name ,"description":description ,"validity": validity};
 				var myjson = JSON.stringify(obj);
 				xhr.send(myjson);
 				
@@ -261,10 +261,11 @@ button {
      <Center>
       <ul class="nav">
       
-     
+     <!--
         <p style="font-size: 20px;">  
      		Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
      		<input id="id" type="text" /></p>  
+     		-->
         <p style="font-size: 20px;">  
             Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              
             <input id="name" type="text" /></p>  
