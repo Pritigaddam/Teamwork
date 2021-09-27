@@ -16,28 +16,22 @@ public class MobilePlanSrvc {
 
 	public Object create(MobilePlan entity) {
 		Optional<MobilePlan> person = mobilePlanDao.findById(entity.getId());
-		if(person.isPresent())
-		{
-		return null;
+		if (person.isPresent()) {
+			return null;
+		} else {
+			MobilePlan mobilePlan = mobilePlanDao.save(entity);
+			return mobilePlan;
 		}
-		else
-		{
-		MobilePlan mobilePlan = mobilePlanDao.save(entity);
-		return mobilePlan;
-		}
-		}
+	}
 
 	public Object read(Long id) {
 		Optional<MobilePlan> person = mobilePlanDao.findById(id);
-		if(person.isPresent())
-		{
+		if (person.isPresent()) {
 			return person.get();
-		}
-		else
-		{
+		} else {
 			return null;
 		}
-		
+
 	}
 
 	public Iterable<MobilePlan> readAll() {
@@ -49,22 +43,20 @@ public class MobilePlanSrvc {
 
 		// Homework... write the code to upgrade
 		Optional<MobilePlan> person = mobilePlanDao.findById(tobemerged.getId());
-		
-		if(person.isPresent() && tobemerged.getDescription() != null && tobemerged.getName() != null && tobemerged.getValidity()!=0)
-		{
-		MobilePlan mobilePlan = mobilePlanDao.save(tobemerged);
-		return mobilePlan;
+
+		if (person.isPresent() && tobemerged.getDescription() != null && tobemerged.getName() != null
+				&& tobemerged.getValidity() != 0) {
+			MobilePlan mobilePlan = mobilePlanDao.save(tobemerged);
+			return mobilePlan;
+		} else {
+			return null;
 		}
-		else 
-		{
-		return null;
-		}
-		}
+	}
 
 	public boolean delete(Long planid) {
 		// Homework... write the code to delete
 		Optional<MobilePlan> person = mobilePlanDao.findById(planid);
-		System.out.println("hiiiiiiiiiiiii"+person);
+		System.out.println("hiiiiiiiiiiiii, I am the stupidest person to add this sysout : " + person);
 		if (!person.isPresent()) {
 			mobilePlanDao.deleteById(planid);
 			return true;
