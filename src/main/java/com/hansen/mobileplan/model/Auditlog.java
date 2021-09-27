@@ -9,6 +9,16 @@ public class Auditlog {
 	private String operationType;
 	private String entityJson;
 	private Date modificationDate;
+	
+	public Auditlog() {
+		super();
+	}
+
+	public Auditlog(String operationType, String entityJson) {
+		super();
+		this.operationType = operationType;
+		this.entityJson = entityJson;
+	}
 
 	public Long getId() {
 		return id;

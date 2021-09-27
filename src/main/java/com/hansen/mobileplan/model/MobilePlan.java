@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Entity
 public class MobilePlan {
 
@@ -45,6 +48,21 @@ public class MobilePlan {
 
 	public void setValidity(int validity) {
 		this.validity = validity;
+	}
+	
+	@Override
+	public String toString() {
+		ObjectMapper Obj = new ObjectMapper();
+		String jsonStr = null;
+
+		// Converting the Java object into a JSON string
+		try {
+			jsonStr = Obj.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+
+		return jsonStr;
 	}
 
 }
