@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class MobilePlan {
 	
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String description;

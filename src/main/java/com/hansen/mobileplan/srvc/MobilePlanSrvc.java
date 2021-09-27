@@ -65,7 +65,7 @@ public class MobilePlanSrvc {
 		// Homework... write the code to delete
 		Optional<MobilePlan> person = mobilePlanDao.findById(planid);
 		System.out.println("hiiiiiiiiiiiii"+person);
-		if (!person.isEmpty()) {
+		if (!person.isPresent()) {
 			mobilePlanDao.deleteById(planid);
 			return true;
 		}
