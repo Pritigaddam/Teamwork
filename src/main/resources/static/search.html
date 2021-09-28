@@ -212,17 +212,14 @@ button {
 			xhr.open("GET", "http://localhost:8080/mp/"+idn, false);
 			xhr.send();
 			var mpList = xhr.response;
+			alert(xhr.response);
+
 			var mobilePlans = JSON.parse(mpList)
 			var mobilePlanList = document.getElementById("mobileplans");
-			alert(mobilePlans);
-			if(mobilePlans === 0)
+			if(xhr.response !== isNaN )
 			{
 				mobilePlanList.innerHTML += '<li>' + mobilePlans.id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans.name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans.description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans.validity + '</li>';
 
-			}
-			else
-			{
-				alert("Invalid Id");
 			}
 
 		}
