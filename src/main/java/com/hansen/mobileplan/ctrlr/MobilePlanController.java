@@ -1,5 +1,7 @@
 package com.hansen.mobileplan.ctrlr;
 
+import java.util.Date;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,19 +33,19 @@ public class MobilePlanController {
 	//Prady added this line for audit log Rest Client
 	RestTemplate restTemplate = new RestTemplate();
 
-	
+	Date date = new Date();
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> create(@RequestBody MobilePlan inputentity) {
 		logger.info("Inside add method");
 		ResponseEntity<Object> mpResponse;
-
+		System.out.print(date);
 		Object mobilePlan = mpSrvc.create(inputentity);
 		String m = "Already ID : " + inputentity.getId() + " Exist";
 		if (mobilePlan != null) {
 			mpResponse = new ResponseEntity<Object>(mobilePlan, null, HttpStatus.CREATED);
 			//Prady added below two lines for audit log Rest Client
-			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("CREATED",mpResponse.getBody().toString()));
+			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("CREATED",mpResponse.getBody().toString(),date));
 			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
 			
 			return mpResponse;
@@ -57,14 +59,13 @@ public class MobilePlanController {
 	public ResponseEntity<Object> read(@PathVariable(value = "id") Long id) {
 		logger.info("Inside search method");
 		ResponseEntity<Object> mpResponse;
-
 		Object mobilePlan = mpSrvc.read(id);
 		String m1 = "ID : " + id + " Not Found";
 		if (mobilePlan != null) {
 			mpResponse = new ResponseEntity<Object>(mobilePlan, null, HttpStatus.OK);
 			//Prady added below two lines for audit log Rest Client
-//			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("READ-ONE",mpResponse.getBody().toString()));
-//			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
+			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("READ-ONE",mpResponse.getBody().toString(),date));
+			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
 			
 			return mpResponse;
 		} else {
@@ -77,15 +78,14 @@ public class MobilePlanController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<MobilePlan>> readAll() {
 		logger.info("Inside readAll method");
-
 		ResponseEntity<Iterable<MobilePlan>> mpResponse;
 
 		Iterable<MobilePlan> mobilePlanList = mpSrvc.readAll();
 
 		mpResponse = new ResponseEntity<Iterable<MobilePlan>>(mobilePlanList, null, HttpStatus.OK);
 		//Prady added below two lines for audit log Rest Client
-//		HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("READ-ALL",mpResponse.getBody().toString()));
-//		restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
+		HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("READ-ALL",mpResponse.getBody().toString(),date));
+		restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
 		
 		return mpResponse;
 	}
@@ -102,8 +102,8 @@ public class MobilePlanController {
 			planResponse = new ResponseEntity<Object>(mobilePlanList, null, HttpStatus.OK);
 			
 			//Prady added below two lines for audit log Rest Client
-//			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("UPDATED",planResponse.getBody().toString()));
-//			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
+			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("UPDATED",planResponse.getBody().toString(),date));
+			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
 			
 			return planResponse;
 		} else {
@@ -118,7 +118,7 @@ public class MobilePlanController {
 		ResponseEntity<Object> bookResponse;
 		
 		//Prady added below line for audit log
-//		MobilePlan mp = (MobilePlan) mpSrvc.read(planid);
+		MobilePlan mp = (MobilePlan) mpSrvc.read(planid);
 		
 		Boolean isDeleted = mpSrvc.delete(planid);
 		String m = "ID: " + planid + " deleted successfully";
@@ -127,8 +127,8 @@ public class MobilePlanController {
 			bookResponse = new ResponseEntity<Object>(m, null, HttpStatus.OK);
 			
 			//Prady added below two lines for audit log Rest Client
-//			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("DELETED",mp.toString()));
-//			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
+			HttpEntity<Auditlog> request = new HttpEntity<Auditlog>(new Auditlog("DELETED",mp.toString(),date));
+			restTemplate.postForObject("http://localhost:8081/audit", request, Auditlog.class);
 			
 		} else {
 			bookResponse = new ResponseEntity<Object>(m1, null, HttpStatus.NOT_FOUND);
