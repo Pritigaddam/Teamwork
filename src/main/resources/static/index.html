@@ -1,229 +1,361 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Mobileplan</title>
-<script>document.createElement("mypage")</script>
-<style>
-mypage {
-  display: block;
-  background-color: #E6E6FA;
-  color:#800080 ;
-  padding: 5px;}  
-  
-</style>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;}
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  width: 8%;
-  height: 8%;}
-.pic
-{
-  border-radius:360px;
-  border: 3px solid transparent;
-  border-color:black;
- }
+	<title>Mobileplan</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
 
-.topnav {
-  overflow: hidden;
-  background-color: #800080;
-}
+	<!-- Favicons -->
+	<link href="assets/img/testimonials/micon.jpg" rel="icon">
+	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		rel="stylesheet">
 
-.topnav a.active {
-  background-color: #800080;
-  color: white;
-}
-.active {
-  background-color: #4CAF50;
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+	<!-- Vendor CSS Files -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
+	<!-- Template Main CSS File -->
+	<link href="assets/css/style.css" rel="stylesheet">
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-#main    {
-     background-color: #E6E6FA;
-     width: 1250px;
-     margin: 50px auto;
-     border: 0px solid;
-	 border-color :#800080; 
-     } 
-.column {
-  float: left;
-  width: 33.33%;
-  column-gap: 40px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
+	<!-- =======================================================
+  * Template Name: Maxim - v2.3.1
+  * Template URL: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body style="background-color: #E6E6FA">
-<mypage style="text-align:center; font-family:Algerian; font-size:300% ;"><b>MOBILE PLAN DATA</b></mypage>
 
-<div class="topnav">
-  <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="add_data.html"><i class="fa fa-plus"></i>Add Data</a>
-  <a href="Final.html"><i class="fa fa-eye"></i>View Data</a>
- <a  href="search.html"><i class="fa fa-search"></i>Search Data</a>
-  </div>
-  <main id="main">
-  <!--<marquee behavior = "scroll" ><font color="#800080"><h3 style=" font-family:Arial, Helvetica, sans-serif; font-size:150% ;  " >21<sup>st</sup> June International Day Of Yoga</h3></font></marquee>
--->
-<div class="slideshow-container">
+<body>
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 4</div>
-  <img src="images/1.jpg" style="width:100%;height:400px">
-</div>
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top">
+		<div class="container d-flex">
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 4</div>
-  <img src="images/2.jpg" style="width:100%;height:400px">
-</div>
+			<div class="logo mr-auto">
+				<h1 class="text-light"><a href="index.html">Mobile Plan</a></h1>
+				<!-- Uncomment below if you prefer to use an image logo -->
+				<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+			</div>
 
-<div class="mySlides fade">
-  <div class="numbertext">3 / 4</div>
-  <img src="images/3.jpg" style="width:100%;height:400px">
-</div>
+			<nav class="nav-menu d-none d-lg-block">
+				<ul>
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="#about">Add Data</a></li>
+					<li><a href="#services">Search Data</a></li>
+					<li><a href="#portfolio">View Data</a></li>
 
-<div class="mySlides fade">
-  <div class="numbertext">4 / 4</div>
-  <img src="images/4.png" style="width:100%;height:400px">
-</div>
+				</ul>
+			</nav><!-- .nav-menu -->
 
-</div>
-<br>
+		</div>
+	</header><!-- End Header -->
 
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-<script>
-var slideIndex = 0;
-showSlides();
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+		<div class="container text-center text-md-left" data-aos="fade-up">
+			<h1>Welcome to Mobile Plan</h1>
+			<a href="#about" class="btn-get-started scrollto">Get Started</a>
+		</div>
+	</section><!-- End Hero -->
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+	<main id="main">
+
+		<!-- ======= About Section ======= -->
+		<section id="about" class="about">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-xl-6 col-lg-7" data-aos="fade-right">
+						<img src="assets/img/data_add.png" class="img-fluid" alt="">
+					</div>
+				      <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
+						<!DOCTYPE html>
+						<html>
+
+						<head>
+
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1">
+							<link rel="stylesheet"
+								href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+							<title>Mobileplan</title>
+							<script>document.createElement("mypage")</script>
+
+							<script type="text/javascript">
+								function InsertRecord() {
+									//var id = document.getElementById('id').value;  
+									var name = document.getElementById('name').value;
+									var description = document.getElementById('description').value;
+									var validity = document.getElementById('validity').value;
+
+									if (name.length != 0 && description.length != 0 && validity.length != 0) {
+
+
+										var xhr = new XMLHttpRequest();
+										xhr.open("POST", "http://localhost:8080/mp", false);
+										xhr.setRequestHeader("Accept", "application/json");
+										xhr.setRequestHeader("Content-Type", "application/json");
+										xhr.onreadystatechange = function () {
+											if (xhr.readyState === 4) {
+												console.log(xhr.status);
+												console.log(xhr.responseText);
+											}
+										};
+										var obj = {"name": name, "description": description, "validity": validity};
+										var myjson = JSON.stringify(obj);
+										xhr.send(myjson);
+
+										if (xhr.status != 406) {
+											alert("Mobile Plan Added Successfully");
+										}
+										else {
+											alert("Plan Already Exists");
+										}
+									}
+									else {
+										alert("Enter all fields");
+									}
+								}
+
+							</script>
+						</head>
+
+
+						<body style="background-color: #E6E6FA">
+
+
+							<main id="main">
+								<br />
+								<br />
+								<Center>
+									<ul class="nav">
+									<mypage style="text-align:center; font-family:Arial; font-size:250% ;">
+									Add Mobile Plan Data</mypage>
+									</br>
+
+										<!--
+        <p style="font-size: 20px;">  
+     		Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+     		<input id="id" type="text" /></p> 
+     		-->
+										
+										</br>
+										</br>
+										<p style="font-size: 20px;">
+											Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<input id="name" type="text" /></p>
+										<p style="font-size: 20px;">
+											Description &nbsp;&nbsp;
+											<input id="description" type="text" /></p>
+										<p style="font-size: 20px;">
+											Validity &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<input id="validity" type="text" /></p>
+									</ul>
+
+									<br><button type="submit" class="btn" name="bt" onclick="InsertRecord()">Add
+										Data</button>
+									
+								</Center>
+							</main>
+
+						</body>
+
+						</html>
+				 </div>
+					</div>
+
+				</div>
+		</section><!-- End About Section -->
+
+		<!-- ======= Services Section ======= -->
+		<section id="services" class="services section-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-5 col-lg-7" data-aos="fade-right">
+						<img src="assets/img/search_data.png" class="img-fluid" alt="">
+					</div>
+					<!-- This is a very crude way of doing things meant for learning and training only -->
+					<!DOCTYPE html>
+					<html>
+
+					<head>
+						<meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+						<title>Mobileplan</title>
+						<script>document.createElement("mypage")</script>
+
+						<!-- This is a very crude way of doing things meant for learning and training only -->
+						<script type="text/javascript">
+							function getmobileplanlist() {
+								var idn = document.getElementById('id').value;
+								var xhr = new XMLHttpRequest();
+								xhr.open("GET", "http://localhost:8080/mp", false);
+								xhr.send();
+								var mpList = xhr.response;
+								var mobilePlans = JSON.parse(mpList)
+								var flag = 0;
+								var mobilePlanList = document.getElementById("mobilepl");
+							
+for (var i = 0; i < mobilePlans.length; i++) {
+if (mobilePlans[i].id == idn) {
+mobilePlanList.innerHTML += '<li>' + mobilePlans[i].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + mobilePlans[i].name + "&nbsp;&nbsp;&nbsp;&nbsp;" + mobilePlans[i].description + "&nbsp;&nbsp;&nbsp;&nbsp;" + mobilePlans[i].validity + '</li>';
+flag = 1;
 }
-</script>
-<br>
-</br>
-</main>
+}
+if (flag == 0) {
+alert("Invalid Id");
+} }
+
+
+						</script>
+					</head>
+
+					<body style="background-color: #E6E6FA">
+
+
+						<main id="main">
+							<center>
+								<mypage
+									style="text-align:center; font-family:Arial; font-size:250% ;">
+									Search Mobile Plan Data</mypage>
+							</center><br />
+							<br />
+							<Center>
+								<p style="font-size: 20px;">
+											Enter ID: &nbsp;&nbsp;&nbsp;
+											<input id="id" type="text" /></p>
+								<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn" onclick="getmobileplanlist()"> Search </button>
+							<ul id="mobilepl">
+    </ul>
+							</Center>
+							
+						</main>
+					</body>
+					</html>
+				</div>
+			</div>
+			</section>
+			<!-- End Services Section -->
+
+
+
+					<!-- ======= Portfolio Section ======= -->
+					<section id="portfolio" class="portfolio section-bg">
+						<div class="container">
+							<div class="row">
+								<div class="col-xl-6 col-lg-7" data-aos="fade-right">
+									<img src="assets/img/data_view.png" class="img-fluid" alt="">
+								</div>
+								<!-- This is a very crude way of doing things meant for learning and training only -->
+								<!DOCTYPE html>
+								<html>
+
+								<head>
+									<meta charset="utf-8">
+									<meta name="viewport" content="width=device-width, initial-scale=1">
+									<link rel="stylesheet"
+										href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+									<title>Mobileplan</title>
+									<script>document.createElement("mypage")</script>
+									<script type="text/javascript">
+
+
+										function getlist() {
+											var xhr = new XMLHttpRequest();
+											xhr.open("GET", "http://localhost:8080/mp", false);
+											xhr.send();
+											var mpList = xhr.response;
+
+											//alert(mpList);
+											var mobilePlans = JSON.parse(mpList)
+
+
+											var mobilePlanList = document.getElementById("mobileplans");
+
+
+
+											for (var i = 0; i < mobilePlans.length; i++) {
+												mobilePlanList.innerHTML += '<tr>' + '<td class="text-align-center">' + mobilePlans[i].id +
+													'</td>' + '<td class="text-align-center">' + mobilePlans[i].name + '</td>' +
+													'<td class="text-align-center">' + mobilePlans[i].description + '</td>' +
+													'<td class="text-align-center">' + mobilePlans[i].validity + '</td>' +
+													'<td class="text-align-center">' +
+													"<form ><a href='http://localhost:8080/update.html?id=" + mobilePlans[i].id + "&name=" + mobilePlans[i].name + "&description=" + mobilePlans[i].description + "&validity=" + mobilePlans[i].validity + "'><input value ='Edit' id = " + mobilePlans[i].id + " type='button' /></form>" +
+													'</td>' + '<td class="text-align-center">' +
+													"<form ><a href='http://localhost:8080/del.html?id=" + mobilePlans[i].id + "'><input value ='Delete' id = del" + mobilePlans[i].id + " type='button' /></form>" +
+													'</td>' + '</tr>';
+											}
+
+										}
+									</script>
+								</head>
+
+
+								<body style="background-color: #E6E6FA" onLoad="getlist()">
+
+
+									<main id="main">
+										<center>
+											<mypage
+												style="text-align:center; font-family:Arial; font-size:250% ;">
+												List of Mobile Plan Data</mypage>
+										</center> <br />
+										<br />
+										<Center>
+											<table class="center" border="2" width="70%" cellpadding="2"
+												id="mobileplans" ;>
+												<tr>
+													<th>Id</th>
+													<th>Name</br></th>
+													<th>Discription</br></th>
+													<th>Validity</th>
+													<th>Edit</th>
+													<th>Delete</th>
+												</tr>
+											</table>
+										</Center>
+								</body>
+
+								</html>
+							</div>
+						</div>
+					</section>
+
+
+							<!-- ======= Footer ======= -->
+
+							<!-- End Footer -->
+
+							<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+							<!-- Vendor JS Files -->
+							<script src="assets/vendor/jquery/jquery.min.js"></script>
+							<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+							<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+							<script src="assets/vendor/php-email-form/validate.js"></script>
+							<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+							<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+							<script src="assets/vendor/venobox/venobox.min.js"></script>
+							<script src="assets/vendor/aos/aos.js"></script>
+
+							<!-- Template Main JS File -->
+							<script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
