@@ -14,11 +14,10 @@ public class Auditlog {
 		super();
 	}
 
-	public Auditlog(String operationType, String entityJson , Date date) {
+	public Auditlog(String operationType, String entityJson) {
 		super();
 		this.operationType = operationType;
-		this.entityJson = entityJson;
-		this.modificationDate = date;
+	    this.entityJson = entityJson;
 	}
 
 	public Long getId() {

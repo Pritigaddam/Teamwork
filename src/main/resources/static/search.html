@@ -209,19 +209,25 @@ button {
 		function getmobileplanlist() {
 			var idn =document.getElementById('id').value;  
 			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "http://localhost:8080/mp/"+idn, false);
+			xhr.open("GET", "http://localhost:8080/mp", false);
 			xhr.send();
 			var mpList = xhr.response;
-			alert(xhr.response);
-
 			var mobilePlans = JSON.parse(mpList)
+			var flag = 0;
 			var mobilePlanList = document.getElementById("mobileplans");
-			if(xhr.response !== isNaN )
-			{
-				mobilePlanList.innerHTML += '<li>' + mobilePlans.id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans.name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans.description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans.validity + '</li>';
-
+             for (var i = 0; i < mobilePlans.length; i++) 
+             {
+                    if( mobilePlans[i].id==idn)
+                    {
+                        mobilePlanList.innerHTML += '<li>' + mobilePlans[i].id +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].name +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].description +"&nbsp;&nbsp;&nbsp;&nbsp;"+ mobilePlans[i].validity + '</li>';
+ 						flag = 1;
+                    }
+              }
+			  if (flag == 0)
+			  {
+					alert("Invalid Id");
 			}
-
+		
 		}
 	</script>
 </head>
