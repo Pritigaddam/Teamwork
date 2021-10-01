@@ -224,18 +224,29 @@
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", "http://localhost:8080/mp/" + idn, false);
 		xhr.send();
-		
+		var ressize=xhr.response.length;
+		if(ressize<20)
+		{
+		alert(xhr.response);
+		}
 		var mpList = xhr.response;
-		var mobilePlans = JSON.parse(mpList)
-
+		var mobilePlans = JSON.parse(mpList);
+		
+      
 		var mobilePlanList = document.getElementById("mobilepl");
 		
-		mobilePlanList.innerHTML += '<li>'+"ID: " + mobilePlans.id
+		
+			mobilePlanList.innerHTML += '<li>'+"ID: " + mobilePlans.id
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"NAME : " + mobilePlans.name
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"DESCRIPTION : " + mobilePlans.description
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"VALIDITY : "+ mobilePlans.validity + '</li>';
-
+				
 	}
+	
+	
+
+	
+	
 </script>
 </head>
 
@@ -254,7 +265,7 @@
 				Enter ID: &nbsp;&nbsp;&nbsp; <input id="id" type="text" />
 			</p>
 			<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button type="submit" class="btn" onclick="getmobileplanlist()">
+			<button id="btn" type="submit" class="btn" onclick="getmobileplanlist()">
 				Search</button>
 			<ul id="mobilepl">
 			</ul>

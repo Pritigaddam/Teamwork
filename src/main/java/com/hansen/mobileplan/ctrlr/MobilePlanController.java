@@ -1,4 +1,4 @@
-package com.hansen.mobileplan.model;
+package com.hansen.mobileplan.ctrlr;
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
