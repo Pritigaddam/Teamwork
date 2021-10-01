@@ -224,12 +224,12 @@
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", "http://localhost:8080/mp/" + idn, false);
 		xhr.send();
-		alert(xhr.response);
+		
 		var mpList = xhr.response;
 		var mobilePlans = JSON.parse(mpList)
 
 		var mobilePlanList = document.getElementById("mobilepl");
-
+		
 		mobilePlanList.innerHTML += '<li>'+"ID: " + mobilePlans.id
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"NAME : " + mobilePlans.name
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"DESCRIPTION : " + mobilePlans.description
