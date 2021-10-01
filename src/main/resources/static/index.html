@@ -221,25 +221,27 @@
 <script type="text/javascript">
 	function getmobileplanlist() {
 		var idn = document.getElementById('id').value;
-		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:8080/mp/" + idn, false);
-		xhr.send();
-		var ressize=xhr.response.length;
-		if(ressize<25)
+		
+		if(idn.length != 0)
 		{
-		alert(xhr.response);
-		}
-		var mpList = xhr.response;
-		var mobilePlans = JSON.parse(mpList);
-		
-      
-		var mobilePlanList = document.getElementById("mobilepl");
-		
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://localhost:8080/mp/" + idn, false);
+			xhr.send();
+			alert(xhr.response);
+			var mpList = xhr.response;
+			var mobilePlans = JSON.parse(mpList);
+			var mobilePlanList = document.getElementById("mobilepl");
 		
 			mobilePlanList.innerHTML += '<li>'+"ID: " + mobilePlans.id
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"NAME : " + mobilePlans.name
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"DESCRIPTION : " + mobilePlans.description
 				+ "&nbsp;&nbsp;&nbsp;&nbsp;"+"VALIDITY : "+ mobilePlans.validity + '</li>';
+		}
+		else
+		{
+			alert("Enter ID");
+		}
+			
 				
 	}
 	
